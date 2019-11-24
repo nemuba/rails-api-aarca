@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do
+  Race.create(local: Faker::Address.full_address, description: Faker::Lorem.paragraph, date_race: Faker::Date.in_date_period)
+end

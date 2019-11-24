@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: MyString
+  description: MyText
+  date_race: 2019-11-24
+
+two:
+  local: MyString
+  description: MyText
+  date_race: 2019-11-24
