@@ -3,9 +3,10 @@ class RacesController < ApplicationController
 
   # GET /races
   def index
-    @races = Race.all
-
-    render json: @races
+    @races = Race.order(:local).page params[:page]
+    @total_race = Race.count
+    json = {races: @races, total: @total_race}
+    render json: json
   end
 
   # GET /races/1
