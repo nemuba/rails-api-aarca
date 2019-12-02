@@ -8,3 +8,11 @@
 10.times do
   Race.create(local: Faker::Address.full_address, description: Faker::Lorem.paragraph, date_race: Faker::Date.in_date_period)
 end
+
+10.times do |f|
+  if f % 2 == 0
+    TypeTest.create(genre: "Masculino", oar: Faker::Number.between(from: 1, to: 5));
+  else
+    TypeTest.create(genre: "Feminino", oar: Faker::Number.between(from: 1, to: 5));
+  end
+end
