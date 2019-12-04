@@ -36,7 +36,11 @@ class RacesController < ApplicationController
 
   # DELETE /races/1
   def destroy
-    @race.destroy
+   if @race.destroy
+    render json: {msg: "deletado"}
+   else
+    render json: @race.errors, status: :unprocessable_entity
+   end
   end
 
   private
