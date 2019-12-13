@@ -82,6 +82,9 @@ test:
 #
 production:
   <<: *default
-  database: backend_production
-  username: backend
-  password: <%= ENV['BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= Rails.application.credentials.production[:pg][:uri] %>
+  database: <%= Rails.application.credentials.production[:pg][:database] %>
+  password: <%= Rails.application.credentials.production[:pg][:password] %>
+  host: <%= Rails.application.credentials.production[:pg][:host] %>
+  user: <%= Rails.application.credentials.production[:pg][:user] %>
+  port: <%= Rails.application.credentials.production[:pg][:port] %>
