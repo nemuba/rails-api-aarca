@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: 'Usuário'
+        other: 'Usuários'
+      race:
+        one: Corrida
+        other: Corridas
+      test:
+        one: Prova
+        other: Prova
+      type_test:
+        one: Tipo de Prova
+        other: Tipos de Prova
+    attributes:
+      user:
+        email: e-mail
+        password: senha
+        password_confirmation: Confirme a senha

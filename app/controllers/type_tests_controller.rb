@@ -1,4 +1,5 @@
 class TypeTestsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_type_test, only: [:show, :update, :destroy]
 
   # GET /type_tests

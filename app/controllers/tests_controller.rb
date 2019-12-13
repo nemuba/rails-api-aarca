@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_test, only: [:show, :update, :destroy]
 
   # GET /tests
@@ -53,7 +54,11 @@ class TestsController < ApplicationController
 
   # DELETE /tests/1
   def destroy
-    @test.destroy
+    if @test.destroy!
+      render json: {msg: 'deletado !'}
+    else
+      render json: @test.errors
+    end
   end
 
   private
