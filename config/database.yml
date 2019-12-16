@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= Rails.application.credentials.production[:pg][:uri] %>
+  url: "postgres://ldfnjzqltyduxj:36ec72cc0e2dee0ec147b3ce4a0b25c031c4481c478c044b7f898ded11b6d76a@ec2-107-22-234-103.compute-1.amazonaws.com:5432/dbskd8ibahspvu"
   database: <%= Rails.application.credentials.production[:pg][:database] %>
   password: <%= Rails.application.credentials.production[:pg][:password] %>
   host: <%= Rails.application.credentials.production[:pg][:host] %>
