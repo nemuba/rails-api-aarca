@@ -82,9 +82,9 @@ test:
 #
 production:
   <<: *default
-  url: "postgres://ldfnjzqltyduxj:36ec72cc0e2dee0ec147b3ce4a0b25c031c4481c478c044b7f898ded11b6d76a@ec2-107-22-234-103.compute-1.amazonaws.com:5432/dbskd8ibahspvu"
-  database: <%= Rails.application.credentials.production[:pg][:database] %>
-  password: <%= Rails.application.credentials.production[:pg][:password] %>
-  host: <%= Rails.application.credentials.production[:pg][:host] %>
-  user: <%= Rails.application.credentials.production[:pg][:user] %>
-  port: <%= Rails.application.credentials.production[:pg][:port] %>
+  url: "postgres://bavxlutubhfuwq:2ed58be47fcdf92fc487ab96fe7eed72b92358047eeec4ccbd571fd348e8c854@ec2-174-129-255-11.compute-1.amazonaws.com:5432/db9hqfvaklmjis"
+  database: db9hqfvaklmjis
+  password: 2ed58be47fcdf92fc487ab96fe7eed72b92358047eeec4ccbd571fd348e8c854
+  host: ec2-174-129-255-11.compute-1.amazonaws.com
+  user: bavxlutubhfuwq
+  port: 5432
