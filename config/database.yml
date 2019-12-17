@@ -82,9 +82,8 @@ test:
 #
 production:
   <<: *default
-  url: "postgres://bavxlutubhfuwq:2ed58be47fcdf92fc487ab96fe7eed72b92358047eeec4ccbd571fd348e8c854@ec2-174-129-255-11.compute-1.amazonaws.com:5432/db9hqfvaklmjis"
-  database: db9hqfvaklmjis
-  password: 2ed58be47fcdf92fc487ab96fe7eed72b92358047eeec4ccbd571fd348e8c854
-  host: ec2-174-129-255-11.compute-1.amazonaws.com
-  user: bavxlutubhfuwq
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['DB_DATABASE'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  user: <%= ENV['DB_HOST'] %>
