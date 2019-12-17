@@ -32,14 +32,7 @@ module Backend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     # Config Rack-Cors
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*',
-                headers: :any,
-                methods: %I[get post options delete patch puts]
-      end
-    end
+
 
   end
 end
