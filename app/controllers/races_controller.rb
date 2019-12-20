@@ -52,6 +52,6 @@ class RacesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def race_params
-      params.require(:race).permit(:local, :description, :date_race)
+      params.require(:race).permit(:id, :local, :description, :date_race)
     end
 end
