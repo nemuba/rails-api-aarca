@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sponsors
   post 'user_token' => 'user_token#create'
   get 'get_user' => 'auth#current'
   resources :tests, only: [:new, :show, :index, :create, :update, :destroy]
