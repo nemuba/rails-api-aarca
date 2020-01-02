@@ -5,7 +5,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   def index
     @sponsors = Sponsor.order(:name).page params[:page]
-    @total_sponsors = @sponsors.count
+    @total_sponsors = Sponsor.count
     json = {sponsors: @sponsors, total: @total_sponsors }
     render json: json
   end
