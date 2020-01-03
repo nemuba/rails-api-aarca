@@ -15,9 +15,8 @@ end
   else
     TypeTest.create(genre: "Feminino", oar: Faker::Number.between(from: 1, to: 5));
   end
+end
 
-  10.times do |p|
+10.times do |p|
     Sponsor.create(name: Faker::Name.name);
-  end
-
 end
