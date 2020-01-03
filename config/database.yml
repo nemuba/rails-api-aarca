@@ -17,8 +17,3 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  port: <%= Rails.application.credentials.production[:pg][:port] %>
-  host: <%= Rails.application.credentials.production[:pg][:host] %>
-  username: <%= Rails.application.credentials.production[:pg][:user] %>
-  password: <%= Rails.application.credentials.production[:pg][:password] %>
-  database: <%= Rails.application.credentials.production[:pg][:database] %>
