@@ -18,3 +18,8 @@ pt-BR:
         email: e-mail
         password: senha
         password_confirmation: Confirme a senha
+      race:
+        status_list:
+          open: "Aberta para Inscrições"
+          closed: "Fechada"
+          finish: "Finalizada"
