@@ -16,7 +16,7 @@ class RacesController < ApplicationController
                   }
                   end
 
-    json = {races: race_locale, total: @total_race}
+    json = {races: races_locale, total: @total_race}
     render json: json
   end
 
