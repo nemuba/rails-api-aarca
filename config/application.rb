@@ -33,7 +33,11 @@ module Backend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     # Config Rack-Cors
+    # Whitelist locales available for the application
+    I18n.available_locales = [:en, :'pt-BR']
 
+    # Set default locale
+    I18n.default_locale = :'pt-BR'
 
   end
 end

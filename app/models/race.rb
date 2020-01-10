@@ -6,4 +6,5 @@ class Race < ApplicationRecord
   validates :local, :description, length: { minimum: 5 }
 
   enum status: {:closed => 0, :open => 1, :finish => 2}
+  
 end

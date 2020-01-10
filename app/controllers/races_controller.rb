@@ -6,7 +6,17 @@ class RacesController < ApplicationController
   def index
     @races = Race.order(:local).page params[:page]
     @total_race = Race.count
-    json = {races: @races, total: @total_race}
+
+    races_locale = @races.map do |race|
+                  {
+                    id: race.id,
+                    description: race.description,
+                    status: race.status
+                    date_race: I18n.l(race.date_race)
+                  }
+    end
+
+    json = {races: race_locale, total: @total_race}
     render json: json
   end
 
