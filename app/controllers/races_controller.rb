@@ -12,7 +12,7 @@ class RacesController < ApplicationController
                     id: race.id,
                     description: race.description,
                     status: race.status
-                    date_race: I18n.l(race.date_race)
+                    date_race: race.date_race
                   }
     end
 
