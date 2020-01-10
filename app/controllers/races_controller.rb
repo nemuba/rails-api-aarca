@@ -10,9 +10,9 @@ class RacesController < ApplicationController
     races_locale = @races.map do |race|
                   {
                     id: race.id,
-                    description: race.description,
-                    status: race.status
-                    date_race: race.date_race
+                    description:  race.description,
+                    status: race.status,
+                    date_race: I18n.l race.date_race
                   }
     end
 

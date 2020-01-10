@@ -33,11 +33,13 @@ module Backend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     # Config Rack-Cors
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
     # Whitelist locales available for the application
-    I18n.available_locales = [:en, :'pt-BR']
+    config.i18n.available_locales = [:en, :'pt-BR']
 
     # Set default locale
-    I18n.default_locale = :'pt-BR'
+    config.i18n.default_locale = :'pt-BR'
 
   end
 end
