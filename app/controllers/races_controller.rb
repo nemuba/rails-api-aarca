@@ -26,6 +26,10 @@ class RacesController < ApplicationController
     render json: @race
   end
 
+  def new
+    render json: {race_enums: Race.translated_statuses}
+  end
+
   # POST /races
   def create
     @race = Race.new(race_params)
