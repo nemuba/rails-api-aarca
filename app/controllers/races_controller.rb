@@ -30,8 +30,7 @@ class RacesController < ApplicationController
           description: @race.description,
           status: @race.status,
           date_race: @race.date_race.strftime('%Y-%m-%d')
-      }
-    end
+      }.to_json
     render json: json
   end
 
