@@ -13,7 +13,7 @@ class RacesController < ApplicationController
                     local: race.local,
                     description:  race.description,
                     status: race.status,
-                    date_race: race.date_race.strftime('Y%-%m-%d')
+                    date_race: race.date_race.strftime('%Y-%m-%d')
                   }
                   end
 
