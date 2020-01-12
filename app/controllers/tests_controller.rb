@@ -22,7 +22,10 @@ class TestsController < ApplicationController
     @races = Race.order(:description)
     @type_tests = TypeTest.order(:genre)
 
-    json = {races: @races, type_tests: @type_tests}
+    races = @races.map {|race| { value: race.id, label: race.local } }
+    type_tests = @type_tests.map {|type| { value: type.id, label: "#{type.genre} - #{type.oar}" } }
+
+    json = {races: races, type_tests: type_tests}
 
     render json: json
   end
