@@ -23,13 +23,13 @@ class RacesController < ApplicationController
 
   # GET /races/1
   def show
-    json = @race.map do |race|
+    json =
       {
-          id: race.id,
-          local: race.local,
-          description: race.description,
-          status: race.status,
-          date_race: race.date_race.strftime('%Y-%m-%d')
+          id: @race.id,
+          local: @race.local,
+          description: @race.description,
+          status: @race.status,
+          date_race: @race.date_race.strftime('%Y-%m-%d')
       }
     end
     render json: json
