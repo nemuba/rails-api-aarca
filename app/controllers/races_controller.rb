@@ -12,8 +12,8 @@ class RacesController < ApplicationController
                     id: race.id,
                     local: race.local,
                     description:  race.description,
-                    status: race.translated_status,
-                    date_race: "#{I18n.l(race.date_race)}"
+                    status: race.status,
+                    date_race: race.date_race
                   }
                   end
 
