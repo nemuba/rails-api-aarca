@@ -29,7 +29,7 @@ class RacesController < ApplicationController
           id: @race.id,
           local: @race.local,
           description: @race.description,
-          status: @race.status,
+          status: @race.translated_status,
           sponsor_id: @race.sponsor.nil? ? '' : @race.sponsor_id,
           date_race: @race.date_race.strftime('%Y-%m-%d')
       }.to_json
