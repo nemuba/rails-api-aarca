@@ -13,6 +13,7 @@ class RacesController < ApplicationController
                     local: race.local,
                     description:  race.description,
                     status: race.status,
+                    sponsor: race.sponsor.name,
                     date_race: race.date_race.strftime('%Y-%m-%d')
                   }
                   end
@@ -29,13 +30,16 @@ class RacesController < ApplicationController
           local: @race.local,
           description: @race.description,
           status: @race.status,
+          sponsor: @race.sponsor.name
           date_race: @race.date_race.strftime('%Y-%m-%d')
       }.to_json
     render json: json
   end
 
   def new
-    render json: {race_enums: Race.translated_statuses}
+    @sponsors = Sponsor.all
+    @enums = Race.translated_statuses
+    render json: {sponsors: @sponsors ,race_enums: @enums}
   end
 
   # POST /races
@@ -75,6 +79,6 @@ class RacesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def race_params
-      params.require(:race).permit(:id, :local, :description, :date_race, :status)
+      params.require(:race).permit(:id, :local, :description, :date_race, :status, :sponsor_id)
     end
 end

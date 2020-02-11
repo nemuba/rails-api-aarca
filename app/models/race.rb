@@ -1,6 +1,7 @@
 class Race < ApplicationRecord
   include TranslateEnum
   paginates_per 5
+  belongs_to :sponsor
   has_many :tests, dependent: :destroy
 
   validates :local, :description, :date_race, :status,  presence: true

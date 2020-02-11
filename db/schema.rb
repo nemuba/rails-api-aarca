@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_212021) do
+ActiveRecord::Schema.define(version: 2020_02_10_135504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_212021) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.bigint "sponsor_id"
+    t.index ["sponsor_id"], name: "index_races_on_sponsor_id"
   end
 
   create_table "sponsors", force: :cascade do |t|
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_212021) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "races", "sponsors"
   add_foreign_key "tests", "races"
   add_foreign_key "tests", "type_tests"
 end
