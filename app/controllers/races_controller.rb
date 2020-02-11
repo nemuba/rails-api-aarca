@@ -30,7 +30,7 @@ class RacesController < ApplicationController
           local: @race.local,
           description: @race.description,
           status: @race.status,
-          sponsor: @race.sponsor.name
+          sponsor: @race.sponsor.name,
           date_race: @race.date_race.strftime('%Y-%m-%d')
       }.to_json
     render json: json
