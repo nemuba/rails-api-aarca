@@ -55,7 +55,7 @@ class RacesController < ApplicationController
 
   # PATCH/PUT /races/1
   def update
-    if @race.update(race_params)
+    if @race.update_attributes(race_params)
       render json: @race
     else
       render json: @race.errors, status: :unprocessable_entity
