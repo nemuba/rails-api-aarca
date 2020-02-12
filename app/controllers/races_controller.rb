@@ -13,7 +13,7 @@ class RacesController < ApplicationController
                     local: race.local,
                     description:  race.description,
                     status: race.status,
-                    sponsor: race.sponsor.name,
+                    sponsor: !race.sponsor.nil? ? race.sponsor.name : '',
                     date_race: race.date_race.strftime('%Y-%m-%d')
                   }
                   end
@@ -29,16 +29,17 @@ class RacesController < ApplicationController
           id: @race.id,
           local: @race.local,
           description: @race.description,
-          status: @race.status,
-          sponsor: @race.sponsor.name
+          status: @race.translated_status,
+          sponsor_id: @race.sponsor.nil? ? '' : @race.sponsor_id,
           date_race: @race.date_race.strftime('%Y-%m-%d')
       }.to_json
     render json: json
   end
-
+  # GET /race/new
   def new
     @sponsors = Sponsor.all
     @enums = Race.translated_statuses
+    # Render JSON
     render json: {sponsors: @sponsors ,race_enums: @enums}
   end
 
